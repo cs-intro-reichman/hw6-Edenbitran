@@ -10,12 +10,8 @@ public class Runigram {
 		// Tests the reading and printing of an image:
 		Color[][] tinypic = read("tinypic.ppm");
 		// print(tinypic);
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		print(tinypic);// print 2d
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		print(flippedHorizontally(tinypic));
-
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		print(flippedVertically(tinypic));
 
 		// Creates an image which will be the result of various
@@ -171,9 +167,9 @@ public class Runigram {
 	 */
 	public static Color blend(Color c1, Color c2, double alpha) {
 		//// Replace the following statement with your code
-		int vR = (int) (((c1.getRed() * alpha) + (1 - alpha)) * c2.getRed());
-		int vG = (int) (((c1.getGreen() * alpha) + (1 - alpha)) * c2.getGreen());
-		int vB = (int) (((c1.getBlue() * alpha) + (1 - alpha)) * c2.getBlue());
+		int vR = (int) ((c1.getRed() * alpha) + ((1 - alpha) * c2.getRed()));
+		int vG = (int) ((c1.getGreen() * alpha) + ((1 - alpha) * c2.getGreen()));
+		int vB = (int) ((c1.getBlue() * alpha) + ((1 - alpha) * c2.getBlue()));
 		Color blenColor = new Color(vR, vG, vB);
 		return blenColor;
 	}
